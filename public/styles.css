@@ -1,0 +1,90 @@
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --error: #ef4444;
+  --border: #cbd5e1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+body {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  min-height: 560px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.brand-panel {
+  flex: 1;
+  background: var(--bg-gradient);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shield-icon { width: 36px; height: 36px; vertical-align: middle; }
+.brand-header span { font-size: 22px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+
+.form-panel { flex: 1.2; padding: 40px; position: relative; }
+.screen { display: none; }
+.screen.active { display: block; }
+
+h2 { font-size: 22px; color: var(--text-main); margin-bottom: 4px; }
+.subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; color: var(--text-main); }
+.form-group input {
+  width: 100%; padding: 10px; border: 1px solid var(--border);
+  border-radius: 6px; font-size: 14px; outline: none;
+}
+.form-group input:focus { border-color: var(--primary); }
+
+.phone-input { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.phone-input input { border: none; }
+.country-code { padding: 0 10px; background: #f8fafc; font-size: 13px; color: var(--text-muted); border-right: 1px solid var(--border); height: 100%; display: flex; align-items: center; }
+
+.checkbox-group { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 12px 0; color: var(--text-muted); }
+
+.btn-primary {
+  width: 100%; padding: 11px; background: var(--primary); color: white;
+  border: none; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 8px;
+}
+.btn-primary:hover { background: var(--primary-hover); }
+
+/* OTP Component Styling */
+.otp-inputs { display: flex; gap: 8px; margin: 20px 0; justify-content: space-between; }
+.otp-box { width: 42px; height: 48px; text-align: center; font-size: 18px; border: 1px solid var(--border); border-radius: 6px; }
+.otp-box:focus { border-color: var(--primary); outline: none; }
+
+.error-msg { color: var(--error); font-size: 12px; margin: 8px 0; display: none; }
+.timer-text { font-size: 12px; color: var(--text-muted); }
+.switch-screen { text-align: center; margin-top: 18px; font-size: 12px; }
+.switch-screen a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+#api-output {
+  background: #0f172a; color: #38bdf8; padding: 12px; border-radius: 6px;
+  font-family: monospace; font-size: 12px; white-space: pre-wrap; display: none; margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .brand-panel { display: none; }
+  .app-container { max-width: 380px; margin: 16px; }
+}
